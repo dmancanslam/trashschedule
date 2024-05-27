@@ -3,31 +3,9 @@ package trashschedule;
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
 import java.util.Locale;
-import java.util.Scanner;   
-public class display {
+import java.util.Scanner; 
 
-	private static Scanner input;
-	
-	public static void main(String[] args) {
-		input = new Scanner(System.in);
-		System.out.print("Enter your ward # (1-6): ");
-		while(true) {
-			String UserAddress = input.nextLine();  // Read user input
-			if (Integer.parseInt(UserAddress) <4 && Integer.parseInt(UserAddress)>0){
-				writeTable(Integer.parseInt(UserAddress));
-				System.out.println("This table shows an X when the trash will be picked up in the morning. \nKindly place your trash at the curb the previous day after 8:00pm.");
-				break;
-			}
-			else if (Integer.parseInt(UserAddress) >3 && Integer.parseInt(UserAddress)<7){
-				writeTable(Integer.parseInt(UserAddress));
-				System.out.println("This table shows an X when the trash will be picked up in the morning. \nKindly place your trash at the curb the previous day after 8:00pm.");
-				break;
-			}
-			else {
-				System.out.print("Error: You have entered a ward that does not exist. \nPlease enter your ward # (1-6): ");
-			}
-		}
-	}
+public class display {
 	
 	public static void writeTable(int UserAddress) {
 		String[][] table = createEmptyTable();
@@ -44,8 +22,8 @@ public class display {
 			//if-statement to check if holiday
 			table[3][12] = "X";
 		}
-		if (paperCheck%2==0) {
-			table[1][8] = "X"; //check if this works next week, the paperCheck checks if week is odd or even.
+		if (paperCheck%2==0) { // checks for an even or odd week. 2024 calendar says odd weeks are metal/plastic
+			table[1][8] = "X"; 
 							   //odd weeks are paper even weeks are metals/plastic next week (1/1/2024) should be week 1 and should X on metal
 		}
 		else {
@@ -85,7 +63,7 @@ public class display {
 		table[3][0] = "Garbage";
 		return table;
 	}
-	private static void printTable(String[][] table) {
+	private static void printTable(String[][] table) { // might be removed when web development starts. 
 		for (int i=0; i<table.length; i++) { // print table
 			for (int j=0; j<table[i].length; j++) {
 				if (table [i][j] == table [0][0]) {
@@ -109,7 +87,7 @@ public class display {
 			System.out.println();
 		}
 	}
-	private static int weeksPassed() {
+	private static int weeksPassed() { // get weeks # to check later if it's paper or metal/plastic
         // Get the current date
         LocalDate currentDate = LocalDate.now();
 
@@ -119,4 +97,25 @@ public class display {
         // System.out.println("Number of weeks passed in the current year: " + weekNumber);
         return weekNumber;
     }
+	
+	/* public static void main (String[] args) { // for java debugging, delete when moving onto website phase of development.
+	Scanner input = new Scanner(System.in);
+	System.out.print("Enter your ward # (1-6): ");
+	while(true) {
+		String UserAddress = input.nextLine();  // Read user input
+		if (Integer.parseInt(UserAddress) <4 && Integer.parseInt(UserAddress)>0){
+			writeTable(Integer.parseInt(UserAddress));
+			System.out.println("This table shows an X when the trash will be picked up in the morning. \nKindly place your trash at the curb the previous day after 8:00pm.");
+			break;
+		}
+		else if (Integer.parseInt(UserAddress) >3 && Integer.parseInt(UserAddress)<7){
+			writeTable(Integer.parseInt(UserAddress));
+			System.out.println("This table shows an X when the trash will be picked up in the morning. \nKindly place your trash at the curb the previous day after 8:00pm.");
+			break;
+		}
+		else {
+			System.out.print("Error: You have entered a ward that does not exist. \nPlease enter your ward # (1-6): ");
+		}
+	}
+} */
 }

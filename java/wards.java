@@ -53,15 +53,15 @@ public class wards {
 		return ward;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) { // java debug code, mostly moved to main.java
 
 		String address_number;
 		String address_name = "";
 		String zip_code;
 		input = new Scanner(System.in);
 		System.out.print("Enter your address in this format: ### ADDRESS NAME ##### ");
-		while (true) {
-
+		while (true) { // placeholde while loop to implement a method to keep asking user for input.
+						// probably not going to be used on web
 			String UserAddressRaw = input.nextLine(); // Read user input
 			String[] pieces = UserAddressRaw.split(" ");
 			for (int i = 0; i < pieces.length; i++) {
@@ -84,7 +84,7 @@ public class wards {
 
 			break;
 
-		}
+		} 
 
-	}
+	}*/
 }
