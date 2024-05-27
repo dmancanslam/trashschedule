@@ -7,18 +7,9 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class wards {
 	private static Scanner input;
-	
-	public static boolean compareIgnoringSpaces(String str1, String str2) {
-        // Remove all whitespace characters from both strings
-        String cleanedStr1 = str1.replaceAll("\\s", "");
-        String cleanedStr2 = str2.replaceAll("\\s", "");
-
-        // Compare the cleaned strings (case-insensitive)
-        return cleanedStr1.equalsIgnoreCase(cleanedStr2);
-    }
 
 	public static String search(String[] address) {
-		String ward = "Ward not found";
+		String ward = "Ward not found. input address was : "+address[1];
 		boolean evenAddr = (Integer.parseInt(address[0]) % 2==0); // quick cast to int to check for E or O in csv file
 		String EorO;
 		if(evenAddr) {
@@ -38,7 +29,7 @@ public class wards {
 				if (!(EorO.equals(data[3]))) { // skip csv read if not even or odd
 					continue;					// reduces some time to iterate through csv
 				}
-				if (compareIgnoringSpaces(data[0], address[1])) {																	// below line checks lower and upper bounds
+				if (parse.compareIgnoringSpaces(data[0], address[1])) {																	// below line checks lower and upper bounds
 					if (Integer.parseInt(data[1]) <= Integer.parseInt(address[0]) && Integer.parseInt(data[2]) >= Integer.parseInt(address[0])) { // SUPER lazy way to parse ints. probably should make a function to make the nextline() thing into an array instead of leaving it as 1 big string per line.
 						if (data[4].equals(address[2])) { // super strict way to check if input of zip code is identical to csv file's zip
 							return data[5];
