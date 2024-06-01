@@ -1,6 +1,20 @@
 How to use git
 https://www.youtube.com/watch?v=a-zX_qc2S-M&t
+
 Optimize eclipse for development
 https://cishell.wiki.cns.iu.edu/Setup-SSH-on-Eclipse-and-Git_13568315.html
 https://www.youtube.com/watch?v=B2N1AKIQfnY&t=
 https://www.tutorialspoint.com/eclipse/eclipse_perspectives.htm
+
+How to import in eclipse:
+1) Open package explorer (left side) 
+2) Right-click empty space, click import
+3) in pop-up window, under Git, Projects from Git
+4) select Clone URL
+  * Next steps assume you setup SSH key with link above
+5) Enter SSH clone URL, click next
+6) select branch to clone or click next (default should be main)
+7) configure local repository to store files locally.
+  * Ex. (C:\Users\%USERNAME%\git\trashschedule) for Windows
+8) Import existing Eclipse projects (should just import them, if you have a package name this arleady please delete it to make this one)
+9) configure local files as neccessary to complete pull into eclipse, at this point files are already on computer
