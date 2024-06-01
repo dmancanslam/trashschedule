@@ -1,5 +1,6 @@
 How to use git
 https://www.youtube.com/watch?v=a-zX_qc2S-M&t
+https://docs.github.com/en/desktop/managing-commits/reverting-a-commit-in-github-desktop
 
 Optimize eclipse for development
 https://cishell.wiki.cns.iu.edu/Setup-SSH-on-Eclipse-and-Git_13568315.html
