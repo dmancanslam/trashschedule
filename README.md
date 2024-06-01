@@ -13,4 +13,6 @@ TODO:
   4) better way to pull/push from ide??
 
 How to use git
-https://www.youtube.com/watch?v=a-zX_qc2S-M&t=252s
+https://www.youtube.com/watch?v=a-zX_qc2S-M&t
+https://www.youtube.com/watch?v=B2N1AKIQfnY&t=
+https://cishell.wiki.cns.iu.edu/Setup-SSH-on-Eclipse-and-Git_13568315.html
