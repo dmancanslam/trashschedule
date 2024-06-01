@@ -11,8 +11,3 @@ TODO:
   2) Implement holiday skips since trash pickup is cancelled on select holidays
   3) transfer entire project to web so you wont have to use CLI or IDE to use program.
   4) better way to pull/push from ide??
-
-How to use git
-https://www.youtube.com/watch?v=a-zX_qc2S-M&t
-https://www.youtube.com/watch?v=B2N1AKIQfnY&t=
-https://cishell.wiki.cns.iu.edu/Setup-SSH-on-Eclipse-and-Git_13568315.html
