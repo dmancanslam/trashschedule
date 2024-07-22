@@ -10,7 +10,7 @@ public class Wards {
 	private static Scanner myReader;
 
 	public static String search(String[] address) {
-		String ward = "Ward not found. input address was : "+address[1];
+		String ward = "Ward not found. Input address parsed: "+address[1];
 		boolean evenAddr = (Integer.parseInt(address[0]) % 2==0); // quick cast to int to check for E or O in csv file
 		String EorO;
 		if(evenAddr) {
@@ -45,38 +45,5 @@ public class Wards {
 		return ward;
 	}
 
-	/*public static void main(String[] args) { // java debug code, mostly moved to main.java
-
-		String address_number;
-		String address_name = "";
-		String zip_code;
-		input = new Scanner(System.in);
-		System.out.print("Enter your address in this format: ### ADDRESS NAME ##### ");
-		while (true) { // placeholde while loop to implement a method to keep asking user for input.
-						// probably not going to be used on web
-			String UserAddressRaw = input.nextLine(); // Read user input
-			String[] pieces = UserAddressRaw.split(" ");
-			for (int i = 0; i < pieces.length; i++) {
-				if (i != 0 && i != pieces.length - 1) {
-
-					address_name += pieces[i]+ " ";
-
-				}
-
-			}
-			address_number = pieces[0];
-			zip_code = pieces[pieces.length - 1];
-
-			System.out.println("Address Number: " + address_number);
-			System.out.println("Address Name: " + address_name);
-			System.out.println("Zipcode: " + zip_code);
-			
-			String[] prepped_addr = {address_number, address_name, zip_code};
-			System.out.println("function returns: " + search(prepped_addr));
-
-			break;
-
-		} 
-
-	}*/
+	
 }

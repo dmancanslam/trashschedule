@@ -17,25 +17,20 @@ public class Holidays {
 		String date = ("Date: " + month + "/" + day + "/" + year);
 		return date;
 	}
-	public String printDay() {
+	public String getDay() {
 		HashMap<Integer,String> dict = new HashMap<Integer,String>();
-		dict.put(1, "Sunday");
-		dict.put(2, "Monday");
-		dict.put(3, "Tuesday");
-		dict.put(4, "Wednesday");
-		dict.put(5, "Thursday");
-		dict.put(6, "Friday");
-		dict.put(7, "Saturday");
-		String dayName = ("Day: " + dict.get(number_day));
+		dict.put(1, "SUN");
+		dict.put(2, "MON");
+		dict.put(3, "TUE");
+		dict.put(4, "WED");
+		dict.put(5, "THURS");
+		dict.put(6, "FRI");
+		dict.put(7, "SAT");
+		String dayName = (dict.get(number_day));
 		return dayName;
 	}
 	
 	public boolean holidayCheck() {
-
-		System.out.println(printDay());
-		
-		System.out.println(getCalDate());
-		
 		// Check if date is a Holiday
 		// New Years Day (Good)
 		if (month == 1 && day == 1) {

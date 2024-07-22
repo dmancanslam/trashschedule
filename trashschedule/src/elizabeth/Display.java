@@ -9,27 +9,57 @@ import java.util.Scanner;
 public class Display {
 	
 	public static void writeTable(int UserAddress) {
+		Holidays holiday = new Holidays(); // create object to call functions
+		boolean isHoliday = holiday.holidayCheck();
 		String[][] table = createEmptyTable();
 		int paperCheck = weeksPassed();
 		if (UserAddress <4) { // this if-else marks the garbage row for correct days according to ward
+			if(isHoliday && holiday.getDay() == "MON") { //if-statement to check if holiday
+				table[3][4] = "H"; // MON column 
+			}
+			else {
+				table[3][4] = "X";
+			}
 			//if-statement to check if holiday
-			table[3][4] = "X";
-			//if-statement to check if holiday
-			table[3][10] = "X";
+			if(isHoliday && holiday.getDay() == "THURS") { //if-statement to check if holiday
+				table[3][10] = "H"; // THURS column 
+			}
+			else {
+				table[3][10] = "X";
+			}
 		}
 		else if (UserAddress >3){
+			if(isHoliday && holiday.getDay() == "TUE") {
+				table[3][6] = "H"; // TUE column
+			}
+			else {
+				table[3][6] = "X";
+			}
 			//if-statement to check if holiday
-			table[3][6] = "X";
-			//if-statement to check if holiday
-			table[3][12] = "X";
+			if(isHoliday && holiday.getDay() == "FRI") { 
+				table[3][12] = "H"; // FRI column
+			}
+			else {
+				table[3][12] = "X";
+			}
 		}
-		if (paperCheck%2==0) { // checks for an even or odd week. 2024 calendar says odd weeks are metal/plastic
-			table[1][8] = "X"; 
+		// below if-statement checks for an even or odd week. 2024 calendar says odd weeks are metal/plastic
+		if (paperCheck%2==0) { 
+			if(isHoliday) { //if-statement to check if holiday
+				table[1][8] = "H";; // WED column 
+			}
+			else {
+				table[1][8] = "X";;
+			} 
 							   //odd weeks are paper even weeks are metals/plastic next week (1/1/2024) should be week 1 and should X on metal
 		}
 		else {
-			//if-statement to check if holiday
-			table[2][8] = "X"; //check if this works next week
+			if(isHoliday) { //if-statement to check if holiday
+				table[2][8] = "H";; // WED column 
+			}
+			else {
+				table[2][8] = "X";;
+			}  
 		}
 
 		printTable(table); // end alterations
