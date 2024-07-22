@@ -7,6 +7,7 @@ import java.util.Scanner; // Import the Scanner class to read text files
 
 public class Wards {
 	private static Scanner input;
+	private static Scanner myReader;
 
 	public static String search(String[] address) {
 		String ward = "Ward not found. input address was : "+address[1];
@@ -21,7 +22,7 @@ public class Wards {
 		
 		try {
 			File myObj = new File("./countystreetlist04032017.csv");
-			Scanner myReader = new Scanner(myObj);
+			myReader = new Scanner(myObj);
 			
 			while (myReader.hasNextLine()) {
 				String line = myReader.nextLine();

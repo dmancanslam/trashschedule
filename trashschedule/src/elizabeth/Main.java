@@ -10,7 +10,8 @@ public class Main {
 			String UserAddressRaw = input.nextLine(); // Read user input
 
 			int wardNum = Integer.parseInt(Wards.search(Parse.cleanupInput(UserAddressRaw)));
-			
+			Holidays holiday = new Holidays();
+			holiday.holidayCheck();
 			Display.writeTable(wardNum); // static cast to java file located in same directory. Might need to change this to a 'display' object and call the method that way.
 			
 			if (wardNum <4 && wardNum>0){ // wards 1-3 have the same schedule

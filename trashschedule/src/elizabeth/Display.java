@@ -2,6 +2,7 @@ package elizabeth;
 
 import java.time.LocalDate;
 import java.time.temporal.WeekFields;
+import java.util.Calendar;
 import java.util.Locale;
 import java.util.Scanner; 
 
@@ -30,7 +31,8 @@ public class Display {
 			//if-statement to check if holiday
 			table[2][8] = "X"; //check if this works next week
 		}
-		printTable(table);
+
+		printTable(table); // end alterations
 	}
 	public static String[][] createEmptyTable() {
 		String[][] table = new String[4][16];
@@ -69,7 +71,7 @@ public class Display {
 				if (table [i][j] == table [0][0]) {
 					System.out.print("______");
 				}
-				if (table [i][j] == "-"|| table [i][j] =="X") {
+				if (table [i][j] == "-"|| table [i][j] =="X" || table [i][j] =="H") {
 					if (i > 0 && j == 10) {
 						System.out.print("  " + table [i][j] + "  ");
 					}
@@ -98,24 +100,4 @@ public class Display {
         return weekNumber;
     }
 	
-	/* public static void main (String[] args) { // for java debugging, delete when moving onto website phase of development.
-	Scanner input = new Scanner(System.in);
-	System.out.print("Enter your ward # (1-6): ");
-	while(true) {
-		String UserAddress = input.nextLine();  // Read user input
-		if (Integer.parseInt(UserAddress) <4 && Integer.parseInt(UserAddress)>0){
-			writeTable(Integer.parseInt(UserAddress));
-			System.out.println("This table shows an X when the trash will be picked up in the morning. \nKindly place your trash at the curb the previous day after 8:00pm.");
-			break;
-		}
-		else if (Integer.parseInt(UserAddress) >3 && Integer.parseInt(UserAddress)<7){
-			writeTable(Integer.parseInt(UserAddress));
-			System.out.println("This table shows an X when the trash will be picked up in the morning. \nKindly place your trash at the curb the previous day after 8:00pm.");
-			break;
-		}
-		else {
-			System.out.print("Error: You have entered a ward that does not exist. \nPlease enter your ward # (1-6): ");
-		}
-	}
-} */
 }
