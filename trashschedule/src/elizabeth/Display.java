@@ -13,15 +13,16 @@ public class Display {
 		boolean isHoliday = holiday.holidayCheck();
 		String[][] table = createEmptyTable();
 		int paperCheck = weeksPassed();
+		String today = holiday.getDay();
 		if (UserAddress <4) { // this if-else marks the garbage row for correct days according to ward
-			if(isHoliday && holiday.getDay() == "MON") { //if-statement to check if holiday
+			if(isHoliday && today == "MON") { //if-statement to check if holiday
 				table[3][4] = "H"; // MON column 
 			}
 			else {
 				table[3][4] = "X";
 			}
 			//if-statement to check if holiday
-			if(isHoliday && holiday.getDay() == "THURS") { //if-statement to check if holiday
+			if(isHoliday && today == "THURS") { //if-statement to check if holiday
 				table[3][10] = "H"; // THURS column 
 			}
 			else {
@@ -29,14 +30,14 @@ public class Display {
 			}
 		}
 		else if (UserAddress >3){
-			if(isHoliday && holiday.getDay() == "TUE") {
+			if(isHoliday && today == "TUE") {
 				table[3][6] = "H"; // TUE column
 			}
 			else {
 				table[3][6] = "X";
 			}
 			//if-statement to check if holiday
-			if(isHoliday && holiday.getDay() == "FRI") { 
+			if(isHoliday && today == "FRI") { 
 				table[3][12] = "H"; // FRI column
 			}
 			else {
