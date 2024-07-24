@@ -13,8 +13,8 @@ public class Parse {
 		String address_number;
 		String address_name = "";
 		String zip_code;
-		String[] abbreviateFrom = {"street", "drive", "boulevard", "avenue"};
-		String[] abbreviateTo = {"st", "dr", "blvd", "ave"};
+		String[] abbreviateFrom = {"street", "drive", "boulevard", "avenue", "road"};
+		String[] abbreviateTo = {"st", "dr", "blvd", "ave", "rd"};
 		String[] pieces = UserAddressRaw.split(" "); // explode user input to break apart raw input
 		int count = 0;
 		
