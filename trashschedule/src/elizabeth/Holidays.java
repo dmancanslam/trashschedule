@@ -18,6 +18,7 @@ public class Holidays {
 		return date;
 	}
 	public String getDay() {
+		//Hashmap that contains key value pair associating numbers with the days of the week
 		HashMap<Integer,String> dict = new HashMap<Integer,String>();
 		dict.put(1, "SUN");
 		dict.put(2, "MON");
