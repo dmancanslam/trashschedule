@@ -53,7 +53,6 @@ public class Holidays {
 			isHoliday = true;
 		}
 		// Labor Day
-		// (Test This)
 		else if (month == 9 && number_day == 2 && week_of_month == 1) {
 			System.out.println("Labor Day");
 			isHoliday = true;
